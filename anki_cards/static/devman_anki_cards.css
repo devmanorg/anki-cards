@@ -1,0 +1,406 @@
+.card {
+  font-family: arial;
+  font-size: 16px;
+  /* text-align: center; */
+  color: black;
+  background-color: white;
+}
+
+.card img {
+  display: block;
+  max-width: 95%;
+  margin: .25rem;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+
+/* Source https://www.xaprb.com/blog/how-to-style-images-with-markdown/ */
+.card img.noborder {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.card img.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card img.halfsize {
+  max-width: 50%;
+  margin-right: auto;
+}
+
+:not(pre) > code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,.05);
+  color: #c7254e;
+  border-radius: 6px;
+}
+
+/*
+Custom devman code style.
+Based on default prism.js theme https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+bash+diff+django+docker+http+json+json5+less+makefile+markdown+markup-templating+nginx+powershell+python+jsx+tsx+rest+sass+scss+sql+typescript+wasm+xml-doc+yaml&plugins=
+Inspired by https://github.com/pygments/pygments/blob/master/pygments/styles/friendly.py
+*/
+
+pre {
+  color: #333;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 85%;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 0.3em;
+
+}
+
+pre::-moz-selection, pre ::-moz-selection{
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre::selection, pre ::selection{
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  pre {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #60a0b0;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.token.namespace {
+  font-weight: bold;
+  color: #0e84b5;
+}
+
+.token.tag {
+  color: #062873;
+  font-weight: bold;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.symbol {
+  color: #40a070;
+}
+
+.token.constant {
+  color: #60add5;
+}
+
+.token.deleted {
+  color: #A00000;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char {
+  color: #4070a0;
+}
+
+.token.builtin {
+  color: #007020;
+}
+.token.decorator{
+
+  color: #555555;
+  font-weight: bold;
+}
+
+.token.inserted {
+  color: #00A000;
+}
+
+.token.operator,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #666666;
+}
+.token.entity {
+  font-weight: bold;
+  color: #d55537;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #007020;
+  font-weight: bold;
+}
+
+.token.function {
+  color: #06287e;
+}
+.token.class-name {
+  color: #0e84b5;
+  font-weight: bold;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #bb60d5;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+
+/* Custom console view */
+
+pre.language-shell-session,
+pre.language-sh-session,
+pre.language-shellsession {
+    background: #343d46;
+    color: #f8f8f2;
+    text-shadow: 0 1px black;
+}
+
+
+.language-shell-session .token.comment,
+.language-sh-session .token.comment,
+.language-shellsession .token.comment,
+
+.language-shell-session .token.prolog,
+.language-sh-session .token.prolog,
+.language-shellsession .token.prolog,
+
+
+.language-shell-session .token.doctype,
+.language-sh-session .token.doctype,
+.language-shellsession .token.doctype,
+
+.language-shell-session .token.cdata,
+.language-sh-session .token.cdata,
+.language-shellsession .token.cdata {
+  color: #8292a2;
+  font-style: normal;
+}
+
+.language-shell-session .token.punctuation,
+.language-sh-session .token.punctuation,
+.language-shellsession .token.punctuation {
+  color: #f8f8f2;
+}
+
+.language-shell-session .token.namespace,
+.language-sh-session .token.namespace,
+.language-shellsession .token.namespace {
+  opacity: .7;
+}
+
+.language-shell-session .token.property,
+.language-sh-session .token.property,
+.language-shellsession .token.property,
+
+.language-shell-session .token.tag,
+.language-sh-session .token.tag,
+.language-shellsession .token.tag,
+
+.language-shell-session .token.constant,
+.language-sh-session .token.constant,
+.language-shellsession .token.constant,
+
+.language-shell-session .token.symbol,
+.language-sh-session .token.symbol,
+.language-shellsession .token.symbol,
+
+.language-shell-session .token.deleted,
+.language-sh-session .token.deleted,
+.language-shellsession .token.deleted {
+  color: #f92672;
+}
+
+.language-shell-session .token.boolean,
+.language-sh-session .token.boolean,
+.language-shellsession .token.boolean,
+
+.language-shell-session .token.number,
+.language-sh-session .token.number,
+.language-shellsession .token.number {
+  color: #ae81ff;
+}
+
+.language-shell-session .token.selector,
+.language-sh-session .token.selector,
+.language-shellsession .token.selector,
+
+.language-shell-session .token.attr-name,
+.language-sh-session .token.attr-name,
+.language-shellsession .token.attr-name,
+
+.language-shell-session .token.string,
+.language-sh-session .token.string,
+.language-shellsession .token.string,
+
+.language-shell-session .token.char,
+.language-sh-session .token.char,
+.language-shellsession .token.char,
+
+.language-shell-session .token.builtin,
+.language-sh-session .token.builtin,
+.language-shellsession .token.builtin,
+
+.language-shell-session .token.inserted,
+.language-sh-session .token.inserted,
+.language-shellsession .token.inserted {
+  color: #a6e22e;
+}
+
+.language-shell-session .token.operator,
+.language-sh-session .token.operator,
+.language-shellsession .token.operator,
+
+.language-shell-session .token.entity,
+.language-sh-session .token.entity,
+.language-shellsession .token.entity,
+
+.language-shell-session .token.url,
+.language-sh-session .token.url,
+.language-shellsession .token.url,
+
+.language-shell-session .language-css .token.string,
+.language-sh-session .language-css .token.string,
+.language-shellsession .language-css .token.string,
+
+.language-shell-session .style .token.string,
+.language-sh-session .style .token.string,
+.language-shellsession .style .token.string,
+
+.language-shell-session .token.variable,
+.language-sh-session .token.variable,
+.language-shellsession .token.variable {
+  color: #f8f8f2;
+}
+
+.language-shell-session .token.atrule,
+.language-sh-session .token.atrule,
+.language-shellsession .token.atrule,
+
+.language-shell-session .token.attr-value,
+.language-sh-session .token.attr-value,
+.language-shellsession .token.attr-value,
+
+.language-shell-session .token.function,
+.language-sh-session .token.function,
+.language-shellsession .token.function,
+
+.language-shell-session .token.class-name,
+.language-sh-session .token.class-name,
+.language-shellsession .token.class-name {
+  color: #e6db74;
+  font-weight: normal;
+}
+
+.language-shell-session .token.keyword,
+.language-sh-session .token.keyword,
+.language-shellsession .token.keyword {
+  color: #66d9ef;
+}
+
+.language-shell-session .token.regex,
+.language-sh-session .token.regex,
+.language-shellsession .token.regex,
+
+.language-shell-session .token.important,
+.language-sh-session .token.important,
+.language-shellsession .token.important {
+  color: #fd971f;
+}
+
+.language-shell-session .token.important,
+.language-sh-session .token.important,
+.language-shellsession .token.important,
+
+.language-shell-session .token.bold,
+.language-sh-session .token.bold,
+.language-shellsession .token.bold {
+  font-weight: bold;
+}
+
+.language-shell-session .token.italic,
+.language-sh-session .token.italic,
+.language-shellsession .token.italic {
+  font-style: italic;
+}
+
+.language-shell-session .token.entity,
+.language-sh-session .token.entity,
+.language-shellsession .token.entity {
+  cursor: help;
+}
+
+
+.feedback-link {
+  display: block;
+  margin-top: 1.5rem;
+  color: grey;
+  font-size: 85%;
+  text-decoration: underline;
+}
+
+.filepath {
+  color: #6c757d;
+  font-family: monospace;
+  font-size: 95%;
+  padding-left: 21px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABmJLR0QA/wD/AP+gvaeTAAAAo0lEQVQ4je3TrxIBURTH8Y8/ibBV3GDGAxiB4Bk0TyB4HxFNkFXJyBqPoIkURVlj7dxdqxrfdO78fud37r0zp+JFD7F8jjiFhGqqnqKRE9DCHv2CIWCJKEdrY4YNhlmx/ik5xRVjrJPz7ilUg/YwMQZYYC71tLIhFxzQRQcrTELGoj/JEiX+r25SyD/k50OyuzPCrUTf27bXUvUZzZLD79gmPR6GcRPbqOXzrAAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+}

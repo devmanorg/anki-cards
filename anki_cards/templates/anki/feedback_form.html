@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сообщить о проблеме. Девман</title>
+  <style type="text/css">
+    html {
+      --btn-color: #3F91BE;  /* Devman style */
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      /* copied from bootstrap */
+      background-color: var(--btn-color);
+      border-color: var(--btn-color);
+      color: #FFF;
+      margin-top: .25rem;
+      margin-bottom: .25rem;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .submit-btn {
+      /* custom style */
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .submit-btn:focus{
+      outline: 0;
+      border-color: #0062cc;
+      box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+    }
+
+    .submit-btn:hover{
+      background-color: #3982ab;;
+    }
+
+    .form-control {
+      /* copied from bootstrap */
+      display: block;
+      width: calc(100% - .75rem - .75rem);
+      height: auto;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+
+    .form-control:focus {
+      /* copied from bootstrap */
+      color: #495057;
+      background-color: #fff;
+      border-color: #80bdff;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    }
+
+    .error {
+      /* copied from bootstrap */
+      margin-top: 1rem;
+      color: #721c24;
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      position: relative;
+      padding: .75rem 1.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: .25rem;
+    }
+  </style>
+</head>
+<body>
+  <form type="submit" action="." method="POST">
+    {% if errors %}
+      {% if errors.card %}
+        <p class="error">Эта карточка уже была удалена. Скачайте себе свежую версию колоды.</p>
+      {% else %}
+        {% for field, field_errors in errors.items %}
+          {% for error in field_errors %}
+            <p class="error">{{ field }}. {{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+
+    <input name="card" type="hidden" value="{% firstof request.POST.card request.GET.card %}">
+    <textarea class="form-control" name="description" rows="3" placeholder="Что не так с картой?" required>{% firstof request.POST.description request.GET.description %}</textarea>
+    <div>
+      <button type="submit" class="submit-btn">Отправить</button>
+    </div>
+  </form>
+</body>
+</html>

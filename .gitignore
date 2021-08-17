@@ -1,0 +1,8 @@
+.envrc
+.python-version
+__pycache__/*
+*.pyc
+.idea
+*.sqlite3
+assets/*
+.DS_Store

@@ -1,0 +1,24 @@
+.anki-cards-list-preview {
+  max-width: 400px;
+  overflow: hidden;
+  max-height: 130px;
+  text-overflow: ellipsis;
+  font-size: 90%;
+}
+.anki-cards-list-preview img {
+  max-width: 400px;
+  max-height: 200px;
+}
+.anki-cards-list-preview p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.anki-cards-list-preview pre {
+  padding: 0;
+}
+
+.anki-cards-list-preview .answer {
+  padding: 5px;
+  background-color: #eaeaea;
+}
