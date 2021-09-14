@@ -70,6 +70,8 @@ def generate_card_guid():
 
 
 class BaseCard(models.Model):
+    """Use multi-table inheritance to provide same changelist page in admin UI for cards of any type."""
+
     guid = models.CharField(
         max_length=36,  # 36 symbols are common uuid hash length.
         unique=True,

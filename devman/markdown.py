@@ -24,6 +24,7 @@ render_anki_markdown = partial(render_markdown, script_name='render_anki_md.js')
 
 
 def render_in_bulk(render_function, raw_chunks):
+    """Speedup markdown rendering by avoiding multiple slow initializations of Node.js interpreter."""
     delimiter = chr(7)  # beep symbol, is supported by JS script
     joined_html = render_function(delimiter.join(raw_chunks))
     return joined_html.split(delimiter)
