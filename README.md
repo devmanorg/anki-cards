@@ -102,6 +102,8 @@ B6. Как модель `BaseCard` связана с `BasicCard` и `EnglishCard
 
 B7. Зачем нужна модель `BaseCard`?
 
+B8. Почему модель `BaseCard` не сдалили абстрактной? В чём польза ?
+
 ### C. Файл devman/markdown.py
 
 C1. Строка 17 -- о каком `returncode` идёт речь? Что лежит в этом атрибуте?
