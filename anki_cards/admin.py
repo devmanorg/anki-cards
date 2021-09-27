@@ -432,7 +432,17 @@ class BaseCardAdmin(ImportExportModelAdmin):
         return super().change_view(request, object_id, **kwargs)
 
     def has_delete_permission(self, request, obj=None):
-        # used during cascade deletion of BasicCard instance
+        """Is used during cascade deletion of BasicCard or EnglishCard instance.
+        
+        Deletion of any BasicCard instance via admin UI will cause cascade deletion of every related records. BasicCard and BaseCard are related via
+        OneToOneField, so UI will check permissions for both models before deletion. So two methods of different classes will be called:
+
+        - BasicCardAdmin.has_delete_permission
+        - BaseCard.has_delete_permission
+        
+        This method should return True, to permit deletion of ant child model instance: BasicCard, EnglishCard, whatever. 
+        """
+
         if obj and not obj.published and obj.created_by == request.user:
             return True
 
