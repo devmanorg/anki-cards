@@ -1,7 +1,7 @@
 Django==3.1.13
 psycopg2-binary==2.8.6
 djangorestframework==3.12.4
-Pillow==8.2.0
+Pillow==8.3.2
 django-markupfield==2.*
 environs[django]==9.3.2
 rollbar==0.15.2
