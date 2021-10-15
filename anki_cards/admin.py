@@ -216,9 +216,9 @@ class DeckAdmin(ImportExportMixin, DraggableMPTTAdmin):
         })
         return format_html('''
             <div style="line-height: 22px;">
-                <a href="/anki/cards.apkg?{}">Скачать колоду</a>
+                <a href="{}?{}">Скачать колоду</a>
             </div>
-        ''', query)
+        ''', reverse('download_anki_deck'), query)
     get_download_link.short_description = 'Скачать'
 
     def get_export_queryset(self, request):

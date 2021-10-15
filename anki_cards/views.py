@@ -15,7 +15,7 @@ from .models import BaseCard, Deck, Issue
 from .export.apkg import export_cards
 
 
-def download_deck(request, format=None):
+def download_deck(request):
     cards_query = BaseCard.objects.select_related('basiccard', 'englishcard', 'deck').filter(published=True)
 
     # Перемешиваем подряд идущие карты на случай, если все они по одному и тому же улучшению код-ревью.
