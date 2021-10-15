@@ -88,7 +88,7 @@ B2. Что такое `MPTTModel` и зачем понадобился?
 
 B3. Что такое `MPTTMeta`?
 
-B4. Строка 40. Зачем нужен unique_together?
+B4. Строка 40. Зачем понадобился unique_together? Кому и какую пользу он причиняет?
 
 ```python
 unique_together = [
